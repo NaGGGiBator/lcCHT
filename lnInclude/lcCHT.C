@@ -1,1 +1,1 @@
-../lcCHT.C
+../source_lcCHT/lcCHT.C

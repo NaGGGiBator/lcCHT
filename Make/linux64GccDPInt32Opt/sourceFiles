@@ -1,4 +1,4 @@
 SOURCE = \
-lcCHT.C \
+source_lcCHT/lcCHT.C \
 
 # sources
