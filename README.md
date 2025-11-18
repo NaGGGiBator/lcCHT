@@ -4,6 +4,7 @@ New solver for Openfoam
 
 ## **Include**
 
+```C++
 functions
 {
     libs
@@ -18,7 +19,7 @@ functions
 	SETTING
     }
 }
-
+```
 
 ## **Settings**
 **Important parametrs:** 				<br>
