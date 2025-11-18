@@ -9,14 +9,14 @@ functions
 {
     libs
     (
-	"fieldFunctionObjects"
-	"lc_cht_lib.so"
+        "fieldFunctionObjects"
+        "lc_cht_lib.so"
     );
 
     lcCHT
     {
-        type            	lcCHT;
-			SETTING
+        type        lcCHT;
+             SETTING
     }
 }
 ```
