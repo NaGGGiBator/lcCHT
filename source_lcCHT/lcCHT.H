@@ -24,7 +24,13 @@ class lcCHT : public fieldExpression
 private:
 
     virtual bool calc();
+    double  findPatchID(word patchName);
+
     const Time& runTime_;
+    scalar  time_step_solid;
+    scalar  time_step_fluid;
+    scalar  iteration_fluid;
+    word    patchName;
 
 public:
 

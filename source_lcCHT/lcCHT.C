@@ -20,6 +20,33 @@ namespace functionObjects
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 
+double Foam::functionObjects::lcCHT::findPatchID(word patchName)
+{
+    Info << endl << endl << endl;
+    Info << patchName << endl;
+    Info << endl << endl << endl;
+
+    const polyBoundaryMesh& patches = mesh_.boundaryMesh();
+
+    auto patchID = -1;
+
+    forAll(patches, i)
+    {
+        if (patches[i].name() == patchName)
+        {
+            patchID = i;
+            break;
+        }
+    }
+
+    if (patchID == -1)
+    {
+        FatalErrorInFunction << "Patch " << patchName << " not found!" << exit(FatalError);
+    }
+
+    return 0;
+}
+
 bool Foam::functionObjects::lcCHT::calc()
 {
     Info << endl;
@@ -28,15 +55,16 @@ bool Foam::functionObjects::lcCHT::calc()
     Info << "************************************************************" << endl;
     Info << endl;
 
-    const volScalarField& T = 
-        lookupObject<volScalarField>(fieldName_);
+    const volScalarField& T = lookupObject<volScalarField>(fieldName_);
 
-    return store
-    (
-        resultName_,
-        T + dimensionedScalar("Tinc", T.dimensions(), 1000)
-    );
-    //}
+    findPatchID(patchName);
+
+
+//    return store
+//    (
+//        resultName_,
+//        T + dimensionedScalar("Tinc", T.dimensions(), 1000)
+//    );
 
     return true; //false;
 }
@@ -54,8 +82,13 @@ Foam::functionObjects::lcCHT::lcCHT
     fieldExpression(name, runTime, dict, "T"),
     runTime_(runTime)
 {
-    setResultName("T2", "T");
+    time_step_fluid = readScalar(dict.lookup("time_step_fluid"));
+    time_step_solid = readScalar(dict.lookup("time_step_solid"));
+    patchName = word(dict.lookup("patchName"));
+
+    //setResultName("T2", "T");
 }
 
 
 // ************************************************************************* //
+
