@@ -16,7 +16,7 @@ functions
     lcCHT
     {
         type            	lcCHT;
-	SETTING
+			SETTING
     }
 }
 ```
