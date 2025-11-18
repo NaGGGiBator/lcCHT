@@ -21,11 +21,11 @@ functions
 
 
 ## **Settings**
-**Important parametrs:**
-*region* — The region where to look for the patch
-*patchName* — Coupling interface
-*time_step_fluid* — Time step in the fluid zone
-*time_step_solid* — Time step in the solid zone
+**Important parametrs:** 				<br>
+*region* — The region where to look for the patch	<br>
+*patchName* — Coupling interface			<br>
+*time_step_fluid* — Time step in the fluid zone		<br>
+*time_step_solid* — Time step in the solid zone		<br>
 
 **Optional:**
 
