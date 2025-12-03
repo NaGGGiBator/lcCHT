@@ -7,6 +7,10 @@
 #define functionObjects_lcCHT_H
 
 #include "fieldExpression.H"
+#include "PtrList.H"
+#include "CombustionModel.H"
+#include "rhoReactionThermo.H"
+#include "compressibleTurbulenceModel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -25,12 +29,21 @@ private:
 
     virtual bool calc();
     double  findPatchID(word patchName);
+    double  changeTime();
 
     const Time& runTime_;
-    scalar  time_step_solid;
-    scalar  time_step_fluid;
-    scalar  iteration_fluid;
-    word    patchName;
+    scalar      time_step_solid;
+    scalar      time_step_fluid;
+    scalar      iteration_fluid;
+    scalar      iterator_for_fluid;
+    scalar      iteration_solid;
+    scalarField T_old;
+    word        patchName;
+    bool        calc_fluid;
+    bool        firstIter;
+    double      newTimeStep_;
+    double      print_timeStep;
+
 
 public:
 

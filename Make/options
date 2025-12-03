@@ -25,7 +25,10 @@ EXE_INC = \
     -I$(LIB_SRC)/fvAgglomerationMethods/pairPatchAgglomeration/lnInclude \
     -I$(LIB_SRC)/phaseSystemModels/multiphaseInter/phasesSystem/lnInclude \
     -I$(LIB_SRC)/functionObjects/field/lnInclude \
-    -I$(LIB_SRC)/phaseSystemModels/reactingEuler/multiphaseSystem/lnInclude
+    -I$(LIB_SRC)/phaseSystemModels/reactingEuler/multiphaseSystem/lnInclude \
+    -I$(LIB_SRC)/combustionModels/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/chemistryModel/lnInclude
+    
 
 LIB_LIBS = \
     -lfiniteVolume \
@@ -51,4 +54,6 @@ LIB_LIBS = \
     -lpairPatchAgglomeration \
     -lincompressibleMultiphaseSystems \
     -lfieldFunctionObjects \
-    -lreactingMultiphaseSystem
+    -lreactingMultiphaseSystem \
+    -lcombustionModels \
+    -lchemistryModel

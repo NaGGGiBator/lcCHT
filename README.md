@@ -2,7 +2,9 @@
 
 New solver for Openfoam
 
-## **Include**
+## **Update 03.12.2025**
+
+### **Include**
 
 ```C++
 functions
@@ -22,7 +24,7 @@ functions
 }
 ```
 
-## **Settings**
+### **Settings**
 **Important parametrs:** 				<br>
 *region* — The region where to look for the patch	<br>
 *patchName* — Coupling interface			<br>
@@ -31,5 +33,4 @@ functions
 
 **Optional:**
 
-### **Update 18.11.2025**
 
